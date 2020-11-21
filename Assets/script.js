@@ -35,13 +35,13 @@ function printPlannerData() {
         var plannerHourTdEL = $('<td>').addClass('hour').text(hours[i]);
         //create the description cell and import the saved tasks, if any.
         var plannerDescriptionTdEL = $('<td>').addClass('description').attr('id', 'textArea').text(tasks[i]).prepend('<textarea>');
-        if (currentTime == hoursMilitary) {
+        if (currentTime == hoursMilitary[i]) {
             plannerDescriptionTdEL.addClass('present');
         };
-        if (currentTime < hoursMilitary) {
+        if (currentTime < hoursMilitary[i]) {
             plannerDescriptionTdEL.addClass('future');
         };
-        if (currentTime > hoursMilitary) {
+        if (currentTime > hoursMilitary[i]) {
             plannerDescriptionTdEL.addClass('past');
         };
         //create the save btn
