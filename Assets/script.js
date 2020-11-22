@@ -79,12 +79,20 @@ $(".saveBtn").on("click", function(event) {
     var dataIndex = $(this).attr("index");
     console.log(dataIndex);
 
-    var element = document.getElementById('index', dataIndex);
-    console.log(element);
+
 
     //get the input from the text area
     var descriptionData = $("textArea").val().trim();
+
+    //there are 9 textareas on the page 
+    //so $("textArea") will return all of them and the .val() here will only return the first one's value
+
+    //instead just traverse from $(this)
+    // use .siblings("textarea") from $(this)
+    // and you will get the value of the one that is adjacent to where the click event occurred.
+    // var textAreaData = $('this.siblings').val().trim();
     console.log(descriptionData);
+    //console.log(textAreaData);
 
     // if null, return
     if (descriptionData === "" ) {
